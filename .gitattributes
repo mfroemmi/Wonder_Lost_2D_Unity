@@ -1,3 +1,5 @@
+*.csharp linguist-detectable=true
+
 ## Unity ##
 
 *.cs diff=csharp text
