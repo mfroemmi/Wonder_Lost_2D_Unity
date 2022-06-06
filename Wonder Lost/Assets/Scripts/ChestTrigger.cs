@@ -6,6 +6,7 @@ public class ChestTrigger : MonoBehaviour
 {
     private Rigidbody rb;
     private bool isPlayerInRange = false;
+    private bool isKeyPressed = false;
     private GameObject player;
 
     // Start is called before the first frame update
@@ -17,20 +18,23 @@ public class ChestTrigger : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isKeyPressed = true;
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             isPlayerInRange = false;
         }
@@ -38,9 +42,10 @@ public class ChestTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isPlayerInRange)
+        if (isPlayerInRange && isKeyPressed)
         {
-            
+            Debug.Log("You need a key!");
+            isKeyPressed = false;
         }
     }
 }

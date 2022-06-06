@@ -313,6 +313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_EdgeRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7013759001390412420, guid: f0215a69a532408429e0b909cc4bf9de, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -361,7 +365,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f0215a69a532408429e0b909cc4bf9de, type: 3}
 --- !u!1001 &7462673070545963842
 PrefabInstance:
