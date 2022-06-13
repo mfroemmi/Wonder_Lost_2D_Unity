@@ -8,12 +8,17 @@ public class ChestTrigger : MonoBehaviour
     private bool isPlayerInRange = false;
     private bool isKeyPressed = false;
     private GameObject player;
+    private GameObject exclamation;
+    private Alert alert;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
+        exclamation = GameObject.Find("SymbolPosition");
+        alert = (Alert)exclamation.GetComponent(typeof(Alert));
+   
     }
 
     private void Update()
@@ -29,6 +34,7 @@ public class ChestTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
+            alert.setTrigger();
         }
     }
 
@@ -37,6 +43,7 @@ public class ChestTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = false;
+            alert.releaseTrigger();
         }
     }
 

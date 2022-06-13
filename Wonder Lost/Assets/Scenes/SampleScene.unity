@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &369597156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8517892784901033702, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
+  m_PrefabInstance: {fileID: 7462673070545963842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &369597158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369597156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e4441ec2e142464ea209fff2869666c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbol: {fileID: 121520152810053131, guid: 3a279df522cc58548b262dfc8499ebe9, type: 3}
+  isTriggered: 0
 --- !u!1 &506403202
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,10 +332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_EdgeRadius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7013759001390412420, guid: f0215a69a532408429e0b909cc4bf9de, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -375,20 +390,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2442181466623168065, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2442181466623168065, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7462673070174037032, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7462673070174037032, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7462673070174037038, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
@@ -434,6 +437,10 @@ PrefabInstance:
     - target: {fileID: 7462673070174037038, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517892784901033702, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
+      propertyPath: m_Name
+      value: SymbolPosition
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
