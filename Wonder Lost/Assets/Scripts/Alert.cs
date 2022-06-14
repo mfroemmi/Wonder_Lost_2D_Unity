@@ -6,7 +6,7 @@ public class Alert : MonoBehaviour
 {
     public GameObject symbol;
     public bool isTriggered = false;
-    private ArrayList list = new ArrayList();
+    private List<GameObject> list = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,10 @@ public class Alert : MonoBehaviour
     {
         if (isTriggered)
         {
+            if (list.Count >= 1)
+            {
+                list[0].transform.position = transform.position;
+            }
             if (list.Count < 1)
             {
                 showAlert();
