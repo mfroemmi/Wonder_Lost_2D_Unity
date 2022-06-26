@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class ChestTrigger : MonoBehaviour
     private Rigidbody rb;
     private bool isPlayerInRange = false;
     private bool isKeyPressed = false;
+    private bool isChestUnlocked = false;
     private GameObject player;
     private GameObject exclamation;
     private Alert alert;
@@ -53,13 +55,23 @@ public class ChestTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isPlayerInRange && isKeyPressed)
+        if (isChestUnlocked && isPlayerInRange && isKeyPressed)
         {
-            Debug.Log("You need a key!");
             isKeyPressed = false;
 
             chestOpen.SetActive(true);
             chestClose.SetActive(false);
         }
+
+        if (!isChestUnlocked && isPlayerInRange && isKeyPressed)
+        {
+            Debug.Log("You need a key!");
+            isKeyPressed = false;
+        }
+    }
+
+    public void UnlockChest()
+    {
+        isChestUnlocked = true;
     }
 }
