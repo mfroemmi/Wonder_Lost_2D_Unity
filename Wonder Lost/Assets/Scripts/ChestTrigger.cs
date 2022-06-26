@@ -11,6 +11,8 @@ public class ChestTrigger : MonoBehaviour
     private GameObject exclamation;
     private Alert alert;
 
+    [SerializeField] private GameObject chestOpen, chestClose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +20,14 @@ public class ChestTrigger : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         exclamation = GameObject.Find("SymbolPosition");
         alert = (Alert)exclamation.GetComponent(typeof(Alert));
-   
+
+        chestOpen.SetActive(false);
+        chestClose.SetActive(true);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             isKeyPressed = true;
         }
@@ -53,6 +57,9 @@ public class ChestTrigger : MonoBehaviour
         {
             Debug.Log("You need a key!");
             isKeyPressed = false;
+
+            chestOpen.SetActive(true);
+            chestClose.SetActive(false);
         }
     }
 }
