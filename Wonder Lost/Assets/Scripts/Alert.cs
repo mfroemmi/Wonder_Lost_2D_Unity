@@ -5,7 +5,9 @@ using UnityEngine;
 public class Alert : MonoBehaviour
 {
     public GameObject symbol;
+    public GameObject text;
     public bool isTriggered = false;
+    public bool isTextTriggered = false;
     private List<GameObject> list = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -19,34 +21,53 @@ public class Alert : MonoBehaviour
     {
         if (isTriggered)
         {
-            if (list.Count >= 1)
+            foreach (var element in list)
             {
-                list[0].transform.position = transform.position;
-            }
-            if (list.Count < 1)
-            {
-                showAlert();
+                element.transform.position = transform.position;
+
+                if (element.CompareTag("Symbol"))
+                {
+                    
+                }
             }
         } 
         else
         {
-            if (list.Count > 0)
+            foreach (var element in list)
             {
-                Destroy((GameObject) list[0]);
-                list.Clear();
+                Destroy(element);
             }
+            list.Clear();
         }
     }
 
-    private void showAlert()
+    private void createSymbol()
     {
-        GameObject g = Instantiate(symbol, transform.position, Quaternion.identity);
-        list.Add(g);
+        list.Add(Instantiate(symbol, transform.position, Quaternion.identity));
+    }
+
+    private void createText()
+    {
+        list.Add(Instantiate(text, transform.position, Quaternion.identity));
+    }
+
+    public void setTextTrigger(string message)
+    {   
+        if (!isTextTriggered)
+        {
+            isTextTriggered = true;
+        }
     }
 
     public void setTrigger()
     {
-        isTriggered = true;
+        if (!isTriggered)
+        {
+            isTriggered = true;
+            createSymbol();
+            createText();
+        }
+        
     }
 
     public void releaseTrigger()
