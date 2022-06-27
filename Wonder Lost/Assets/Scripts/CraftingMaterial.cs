@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : MonoBehaviour
+public class CraftingMaterial : MonoBehaviour
 {
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -10,8 +10,10 @@ public class Food : MonoBehaviour
 
         if (playerInventory != null)
         {
-            playerInventory.AppleCollected();
-            gameObject.SetActive(false);
+            if (gameObject.CompareTag("Wood")){
+                playerInventory.WoodCollected();
+                gameObject.SetActive(false);
+            }
         }
     }
 }
