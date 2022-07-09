@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7134513889526423248}
   - component: {fileID: 4482116838931242405}
   - component: {fileID: 9090885504676755384}
-  - component: {fileID: 2635910908032413051}
+  - component: {fileID: 1458298118}
+  - component: {fileID: 8223826220440374273}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -112,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.54, y: 0.42}
   m_EdgeRadius: 0.02
---- !u!114 &2635910908032413051
+--- !u!114 &1458298118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8113262762765884316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50315665f636297408eaeba83af5f6c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0045decaa51a8364abfdf5dd5449917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceItem: {fileID: 11400000, guid: 348bba35c0d23bb47913b55d854ca611, type: 2}
+  inventorySystem: {fileID: 0}
+--- !u!114 &8223826220440374273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8113262762765884316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e232db3761c5c1249a795c123e74c0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

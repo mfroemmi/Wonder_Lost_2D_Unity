@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7245012771434878631}
   - component: {fileID: 487715479487351138}
   - component: {fileID: 4457441258387948615}
-  - component: {fileID: 2211457430432784637}
+  - component: {fileID: 8072398212403723463}
+  - component: {fileID: 3853194768916549685}
   m_Layer: 0
   m_Name: DriftWood
   m_TagString: Wood
@@ -112,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.68, y: 1.26}
   m_EdgeRadius: 0
---- !u!114 &2211457430432784637
+--- !u!114 &8072398212403723463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7896552578008009277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1d8e20b0ced2741a85d13ea90f2015, type: 3}
+  m_Script: {fileID: 11500000, guid: e232db3761c5c1249a795c123e74c0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3853194768916549685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896552578008009277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0045decaa51a8364abfdf5dd5449917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceItem: {fileID: 11400000, guid: 33d867197655d5041b74c2b1d932c132, type: 2}
+  inventorySystem: {fileID: 0}
