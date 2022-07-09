@@ -40,7 +40,11 @@ public class ChestTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            alert.setTrigger();
+            if (!isChestUnlocked)
+            {
+                alert.releaseTrigger();
+                alert.setTrigger("symbol");
+            }
         }
     }
 
@@ -65,7 +69,8 @@ public class ChestTrigger : MonoBehaviour
 
         if (!isChestUnlocked && isPlayerInRange && isKeyPressed)
         {
-            Debug.Log("You need a key!");
+            alert.releaseTrigger();
+            alert.setTrigger("text", "Ich brauche einen Schlüssel!");
             isKeyPressed = false;
         }
     }

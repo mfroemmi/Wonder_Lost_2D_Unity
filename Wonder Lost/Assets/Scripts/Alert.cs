@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Alert : MonoBehaviour
 {
     public GameObject symbol;
-    public GameObject text;
+    public GameObject textObject;
+    private Text objectText;
     public bool isTriggered = false;
     public bool isTextTriggered = false;
     private List<GameObject> list = new List<GameObject>();
@@ -13,7 +15,7 @@ public class Alert : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectText = textObject.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -24,20 +26,11 @@ public class Alert : MonoBehaviour
             foreach (var element in list)
             {
                 element.transform.position = transform.position;
-
-                if (element.CompareTag("Symbol"))
-                {
-                    
-                }
             }
         } 
         else
         {
-            foreach (var element in list)
-            {
-                Destroy(element);
-            }
-            list.Clear();
+            clearList();
         }
     }
 
@@ -46,26 +39,26 @@ public class Alert : MonoBehaviour
         list.Add(Instantiate(symbol, transform.position, Quaternion.identity));
     }
 
-    private void createText()
+    private void createText(string message)
     {
-        list.Add(Instantiate(text, transform.position, Quaternion.identity));
+        objectText.text = message;
+        list.Add(Instantiate(textObject, transform.position, Quaternion.identity));
     }
 
-    public void setTextTrigger(string message)
-    {   
-        if (!isTextTriggered)
-        {
-            isTextTriggered = true;
-        }
-    }
-
-    public void setTrigger()
+    public void setTrigger(string from, string message = "")
     {
         if (!isTriggered)
         {
+            if (from == "symbol")
+            {
+                createSymbol();
+            }
+
+            if (from == "text")
+            {
+                createText(message);
+            }
             isTriggered = true;
-            createSymbol();
-            createText();
         }
         
     }
@@ -73,5 +66,15 @@ public class Alert : MonoBehaviour
     public void releaseTrigger()
     {
         isTriggered = false;
+        clearList();
+    }
+
+    public void clearList()
+    {
+        foreach (var element in list)
+        {
+            Destroy(element);
+        }
+        list.Clear();
     }
 }
