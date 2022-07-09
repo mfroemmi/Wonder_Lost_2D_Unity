@@ -801,6 +801,10 @@ PrefabInstance:
     - target: {fileID: 369597158, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
       propertyPath: text
       value: 
+      objectReference: {fileID: 5582284719742061400, guid: dc7ae7c3338a9ca4b94485d29cee8942, type: 3}
+    - target: {fileID: 369597158, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
+      propertyPath: textObject
+      value: 
       objectReference: {fileID: 2237378616090799200, guid: 3414745d07da5cb4995542daa51fb93c, type: 3}
     - target: {fileID: 7462673070174037032, guid: 9e1a723f6224d87479641c2acdc0982a, type: 3}
       propertyPath: m_Name
