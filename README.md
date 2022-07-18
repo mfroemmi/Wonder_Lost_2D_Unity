@@ -5,6 +5,20 @@ Collaboration project with @jacky-schfr and @mfroemmi
 https://github.com/users/mfroemmi/projects/2
 
 # DevLog History
-- [DevLog#01](#-devlog#01-) - 18.07.22 - Charakter, Items and Inventory
+- [DevLog#01](#-devlog#01-) | 18.07.22 | Charakter, Items and Inventory
 
-## DevLog#01
+<br/>
+<br/>
+<br/>
+
+## DevLog#01 | 18.07.22 | Charakter, Items and Inventory
+
+### Updates
+-
+-
+-
+-
+
+### Screenshots
+| --------------------- | ----------------------- | ----------------------- |
+| --------------------- | ----------------------- | ----------------------- |
