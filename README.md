@@ -13,12 +13,12 @@ https://github.com/users/mfroemmi/projects/2
 
 ## DevLog#01 | 18.07.22 | Charakter, Items and Inventory
 
-### Updates
+### New Features
 -
 -
 -
 -
 
-### Screenshots
+### Sample Pictures
 | --------------------- | ----------------------- | ----------------------- |
 | --------------------- | ----------------------- | ----------------------- |
