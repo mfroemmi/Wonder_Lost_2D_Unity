@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,15 @@ public class InventorySystem : MonoBehaviour
     private Dictionary<InventoryItemData, InventoryItem> itemDictionary;
     public List <InventoryItem> inventory { get; private set; }
 
+    public static InventorySystem current;
+
+    public event Action onInventoryChangeEvent;
 
     private void Awake()
     {
         inventory = new List<InventoryItem>();
         itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+        current = this;
     }
 
     public InventoryItem Get(InventoryItemData referenceData)
@@ -21,6 +26,11 @@ public class InventorySystem : MonoBehaviour
             return value;
         }
         return null;
+    }
+
+    private void Update()
+    {
+        InventoryChangeEvent();
     }
 
     public void Add(InventoryItemData refenenceData)
@@ -48,6 +58,14 @@ public class InventorySystem : MonoBehaviour
                 inventory.Remove(value);
                 itemDictionary.Remove(referenceData);
             }
+        }
+    }
+
+    public void InventoryChangeEvent()
+    {
+        if(onInventoryChangeEvent != null)
+        {
+            onInventoryChangeEvent();
         }
     }
 }

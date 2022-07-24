@@ -7,7 +7,6 @@ TagManager:
   - Wood
   - Message
   - Symbol
-  - Inventory
   layers:
   - Default
   - TransparentFX
